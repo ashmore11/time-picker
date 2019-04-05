@@ -27,7 +27,7 @@ function toNearestValidTime(time, hourOptions, minuteOptions, secondOptions) {
   const second = secondOptions
     .slice()
     .sort((a, b) => Math.abs(time.second() - a) - Math.abs(time.second() - b))[0];
-  return moment(`${hour}:${minute}:${second}`, 'HH:mm:ss');
+  return moment.utc(`${hour}:${minute}:${second}`, 'HH:mm:ss');
 }
 
 class Panel extends Component {
@@ -67,7 +67,7 @@ class Panel extends Component {
     disabledHours: noop,
     disabledMinutes: noop,
     disabledSeconds: noop,
-    defaultOpenValue: moment(),
+    defaultOpenValue: moment.utc(),
     use12Hours: false,
     addon: noop,
     onKeyDown: noop,

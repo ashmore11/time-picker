@@ -80,7 +80,7 @@ class Header extends Component {
     if (str) {
       const { value: originalValue } = this.props;
       const value = this.getProtoValue().clone();
-      const parsed = moment(str, format, true);
+      const parsed = moment.utc(str, format, true);
       if (!parsed.isValid()) {
         this.setState({
           invalid: true,

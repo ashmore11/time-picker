@@ -73,7 +73,7 @@ export default class Picker extends Component {
     popupStyle: {},
     id: '',
     align: {},
-    defaultOpenValue: moment(),
+    defaultOpenValue: moment.utc(),
     allowEmpty: true,
     showHour: true,
     showMinute: true,
